@@ -90,15 +90,16 @@ function App() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto p-8">
-      <header className="text-center mb-8">
-        <h1 className="text-5xl font-bold mb-2 bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
-          Text Chunking Visualizer
-        </h1>
-        <p className="text-gray-400 text-lg">
-          Explore how text is split into overlapping chunks for processing
-        </p>
-      </header>
+    <div className="min-h-screen flex items-center justify-center p-8">
+      <div className="max-w-7xl w-full">
+        <header className="text-center mb-8">
+          <h1 className="text-5xl font-bold mb-2 bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+            Text Chunking Visualizer
+          </h1>
+          <p className="text-gray-400 text-lg">
+            Explore how text is split into overlapping chunks for processing
+          </p>
+        </header>
 
       <div className="bg-white/5 rounded-xl p-6 mb-8 space-y-6">
         <div className="flex flex-col gap-2">
@@ -225,6 +226,7 @@ function App() {
           ))}
         </div>
       </div>
+    </div>
     </div>
   )
 }
