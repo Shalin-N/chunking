@@ -1,69 +1,77 @@
-# React + TypeScript + Vite
+# Text Chunking Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive React application that visualizes how text chunking works. Perfect for understanding text preprocessing techniques used in natural language processing, RAG systems, and large language model applications.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Interactive Controls**: Adjust chunk size and overlap in real-time
+- **Multiple Chunking Modes**: Switch between character-based and word-based chunking
+- **Visual Representation**: Color-coded text display showing chunk boundaries and overlaps
+- **Chunk Cards**: Detailed view of each chunk with statistics
+- **Responsive Design**: Built with Tailwind CSS for a modern, mobile-friendly interface
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js (v18 or higher recommended)
+- npm or yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository:
+```bash
+git clone https://github.com/Shalin-N/chunking.git
+cd chunking
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies:
+```bash
+npm install
 ```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## Usage
+
+1. **Input Text**: Enter or modify the text you want to chunk in the text area
+2. **Adjust Chunk Size**: Use the slider to set how large each chunk should be (10-200 units)
+3. **Set Overlap**: Control how much chunks overlap with each other (0-200 units)
+4. **Choose Chunking Mode**: Select between character-based or word-based chunking
+5. **Visualize**: See the color-coded text and individual chunk cards update in real-time
+
+## Tech Stack
+
+- **React** - UI framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Vite** - Build tool and dev server
+- **Cloudflare Pages** - Deployment (via Wrangler)
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run deploy` - Deploy to Cloudflare Pages
+- `npm run lint` - Run ESLint
+
+## How Chunking Works
+
+Chunking is the process of dividing large text into smaller, manageable pieces. This is essential for:
+
+- Processing documents that exceed token limits in LLMs
+- Creating embeddings for semantic search
+- Implementing Retrieval-Augmented Generation (RAG) systems
+- Organizing content for better comprehension
+
+The overlap feature ensures that context isn't lost at chunk boundaries, which is crucial for maintaining semantic coherence.
+
+## License
+
+MIT
